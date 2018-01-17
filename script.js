@@ -22,6 +22,8 @@ function updateBgColor()  {
 function updatePenSize() {
   let newPenSize = $("#penSize").val();
   strokeWeight(newPenSize);
+  $("cursor").css("width", newPenSize);
+  
 }
 
 function clearCanvas() {
@@ -31,11 +33,14 @@ function clearCanvas() {
 function device()  {
   let newPenColor = $("#penColor").val();
   stroke(newPenColor);
+  $("*").css("cursor", "crosshair");
 }
 
 function eraser() {
-  stroke("#FFFFF");
-  $("#eraser").css("cursor", "url[images/Eraser_Icon.png]");
+  let newBgColor = $("#bgColor").val();
+  stroke(newBgColor);
+  strokeWeight(30);
+  $("*").css("cursor", "url(images/Eraser_Icon.png), auto");
 }
 
 function draw() {
