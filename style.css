@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+#paintBar {
+  display: flex;
+  flex-direction: row;
+  background-color: dimgrey;
+  font-family: sans-serif;
+  color: white;
+  height: 60px;
+}
+
+#paintBar * {
+  margin: 5px 10px;
+}
+
