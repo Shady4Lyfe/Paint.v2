@@ -1,6 +1,6 @@
 $("#penColor").change(updatePenColor);
 $("#bgColor").change(updateBgColor);
-$("#penSize").change(updatePenSize);
+$("#toolSize").change(updateToolSize);
 $("#clearC").click(clearCanvas);
 $("#eraser").click(eraser);
 $("#brush").click(brush);
@@ -21,11 +21,10 @@ function updateBgColor()  {
   $("body").css("background-color", newBgColor)
 }
 
-function updatePenSize() {
-  let newPenSize = $("#penSize").val();
-  strokeWeight(newPenSize);
-  $("cursor").css("width", newPenSize);
-  
+function updateToolSize() {
+  let newToolSize = $("#toolSize").val();
+  strokeWeight(newToolSize);
+  $("cursor").css("width", newToolSize);
 }
 
 function clearCanvas() {
