@@ -3,7 +3,9 @@ $("#bgColor").change(updateBgColor);
 $("#penSize").change(updatePenSize);
 $("#clearC").click(clearCanvas);
 $("#eraser").click(eraser);
-$("#device").click(device);
+$("#brush").click(brush);
+
+let newBgColor = $("#bgColor").val();
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -16,7 +18,7 @@ function updatePenColor() {
 
 function updateBgColor()  {
   let newBgColor = $("#bgColor").val();
-  background(newBgColor);
+  $("body").css("background-color", newBgColor)
 }
 
 function updatePenSize() {
@@ -30,7 +32,7 @@ function clearCanvas() {
   clear();
 }
 
-function device()  {
+function brush()  {
   let newPenColor = $("#penColor").val();
   stroke(newPenColor);
   $("*").css("cursor", "crosshair");
@@ -39,7 +41,7 @@ function device()  {
 function eraser() {
   let newBgColor = $("#bgColor").val();
   stroke(newBgColor);
-  strokeWeight(30);
+  strokeWeight(20);
   $("*").css("cursor", "url(images/Eraser_Icon.png), auto");
 }
 
